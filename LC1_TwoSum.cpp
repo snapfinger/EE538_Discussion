@@ -9,7 +9,9 @@ vector<int> twoSum2(vector<int>& nums, int target) {
         if(rec.find(nums[i]) != rec.end()){
             return {i, rec[nums[i]]};
         }else{
-            rec.insert(make_pair(target - nums[i], i));
+            m[target-nums[i]] = i;
+//          or
+//          rec.insert(make_pair(target - nums[i], i));
         }
     }
     return vector<int>{};
